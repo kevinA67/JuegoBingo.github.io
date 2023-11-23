@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Estadisticas de Jugadores</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Fasthand&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <div class="menu-1">
+      <ul>
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="registro.html">Registrar Jugador</a>
+        </li>
+        <li>
+          <a href="estadisticaJugadores.html">Estadísticas</a>
+        </li>
+
+        <li>
+          <a href="login.html">Iniciar Juego</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div id="container">
+    <h2 style="text-align: center;color: white;">Lista de Jugadores</h2>
+    <table id="listaJugadores">
+      <thead>
+        <tr>
+          <th>NOMBRE</th>
+          <th>APELLIDO</th>
+          <th>USUARIO</th>
+          <th>PARTIDAS JUGADAS</th>
+          <th>MODO FACIL</th>
+          <th>MODO DIFICIL</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <div id="graph">
+      <div class="collapse">
+        <div class="contenido">
+          <div class="label">Modo Facil: Ganadas vs Perdidas</div>
+          <div class="grafi">
+            <canvas id="grafico1" height="300" width="300"></canvas>
+          </div>
+        </div>
+
+        <div class="contenido">
+          <div class="label">Modo dificil: Ganadas vs Perdidas</div>
+          <div class="grafi">
+            <canvas id="grafico2" height="300" width="300"></canvas>
+          </div>
+        </div>
+
+        <div class="contenido">
+          <div class="label">Partidas Jugadas Modo Facil vs Dificil</div>
+          <div class="grafi">
+            <canvas id="grafico3" height="300" width="300"></canvas>
+          </div>
+        </div>
+
+        <div class="contenido">
+          <div class="label">Partidas Completas vs Incompletas</div>
+          <div class="grafi">
+            <canvas id="grafico4" height="300" width="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- <script src="./script/logicagraficos.js"></script> -->
+  <script src="script/jugadores.js"></script>
+  <script>
+    const collapse = document.getElementsByClassName("contenido");
+
+    for (let i = 0; i < collapse.length; i++) {
+      collapse[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    }
+  </script>
+  <!-- <script>
+      document
+        .getElementById("btnVolver")
+        .addEventListener("click", function () {
+          // Redirige a estadisticaJugadores.html
+          window.location.href = "estadisticaJugadores.html";
+        });
+    </script> -->
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script src="./script/logicagraficos.js"></script>
+<script>
+  const collapse = document.getElementsByClassName("contenido");
+
+  for (let i = 0; i < collapse.length; i++) {
+    collapse[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  }
+</script> -->
+
+</html>

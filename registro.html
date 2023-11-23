@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>BINGO GRUPO-1</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Fasthand&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="menu-1">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="registro.html">Registrar Jugador</a>
+                </li>
+                <li>
+                    <a href="estadisticaJugadores.html">Estadísticas</a>
+                </li>
+                
+                <li>
+                    <a href="login.html">Iniciar Juego</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div id="container">
+        <h2 style="text-align: center; color: white;">Registro de Jugador</h2>
+        <form id="registroForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="off" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" autocomplete="off" required>
+
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" autocomplete="off" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" autocomplete="off" required>
+
+            <button type="button" class="btnSave" onclick="registrar()">Registrar</button>
+        </form>
+
+    </div>
+</body>
+<script src="script/jugadores.js"></script>
+
+</html>

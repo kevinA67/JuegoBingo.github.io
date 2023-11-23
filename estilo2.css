@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+html,
+#interfazJuego {
+    border-top: 0.3rem solid crimson;
+    /* height: calc(100% - 0.3rem); */
+    /* height: 100%; */
+    height: calc(100% + 0.3rem);
+    margin: 0;
+    background-color: white;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.menu-1 {
+    width: 90%;
+    text-align: right;
+}
+
+.menu-1 li,
+.menu-1 a {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    padding: 1%;
+    transition-duration: 0.2s;
+}
+
+.menu-1 ul li a:hover {
+    color: #f13e3e;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/fondo.svg");
+    background-size: cover;
+    background-position: center;
+    /* background: -webkit-linear-gradient(bottom, orange, red); */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    position: relative;
+}
+
+#containerClone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: rgba(241, 113, 62, 0.7);
+    place-items: center;
+    grid-template-rows: 100%;
+    /* align-items: center;
+    justify-content: center; */
+    z-index: 1;
+}
+
+#dificultad {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 65%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(243, 226, 203);
+    box-shadow: 0px 0px 30px 0px antiquewhite;
+    border-radius: 5px;
+}
+
+#dificultad span {
+    font-size: 40px;
+    color: #221f1f;
+    font-family: 'Indie Flower', cursive;
+}
+
+#dificultad a {
+    width: 40%;
+    height: 10%;
+    text-decoration: none;
+    background-color: aqua;
+    padding: 2%;
+    margin: 3%;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px aqua;
+    color: rgb(24, 2, 2);
+    font-family: 'Indie Flower', cursive;
+}
+
+#dificultad a:hover {
+    background-color: rgb(22, 87, 207);
+    box-shadow: 0px 0px 10px 0px rgb(22, 87, 207);
+    color: rgb(241, 244, 245);
+}
+
+#dificultad a:nth-child(4) {
+    width: 20%;
+    height: 4%;
+    background-color: rgb(223, 87, 87);
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px 0px  rgb(223, 87, 87);
+    color: white;
+}
+
+#dificultad a:nth-child(4):hover {
+    width: 20%;
+    height: 4%;
+    background-color:  rgb(252, 17, 17);
+    padding: 2%;
+    margin: 3%;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px 0px  rgb(223, 87, 87);
+    color: rgb(250, 248, 248);
+}
+
+#bontonIniciar {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    background-color: rgb(68, 241, 62);
+    border-radius: 50%;
+    animation: sombra 1.5s infinite;
+    border: 2px solid #000;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+/* #container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(241, 178, 62);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+#container::before {
+    content: "INICIAR";
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgb(68, 241, 62);
+    border-radius: 50%;
+    animation: sombra 1.5s infinite;
+    border: 2px solid #000;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+} */
+/* 
+#container:hover::before{
+    width: 150px;
+    height: 150px;
+} */
+
+
+@keyframes sombra {
+    0% {
+        box-shadow: 0 0 0 0 rgb(0, 0, 0, 0.85);
+    }
+
+    100% {
+        box-shadow: 0 0 0 30px rgb(0, 0, 0, 0);
+    }
+}
+
+
+#tablero {
+    grid-column: 1;
+    grid-row: 1/ span 3;
+    display: grid;
+    background-color: white;
+    width: 80%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20% repeat(5, 16%);
+    /* grid-template-rows: 1.5fr repeat(5, 1fr); */
+    place-items: center;
+    border: 5px solid black;
+}
+
+.casillaJugador {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* grid-column: 1;
+    grid-row: 2; */
+}
+
+.x{
+    grid-column: 1;
+    grid-row: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1;
+    color: green;
+    font-size: 80px;
+    visibility: hidden;
+}
+
+#container3 .x{
+    font-size: 20px;
+}
+
+.titulo:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    width: 80%;
+    height: 90%;
+}
+
+.titulo:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    width: 80%;
+    height: 90%;
+}
+
+.titulo:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+    width: 80%;
+    height: 90%;
+}
+
+.titulo:nth-child(4) {
+    grid-column: 4;
+    grid-row: 1;
+    width: 80%;
+    height: 90%;
+}
+
+.titulo:nth-child(5) {
+    grid-column: 5;
+    grid-row: 1;
+    width: 80%;
+    height: 90%;
+}
+
+
+.jugador,
+.jugador2 {
+    border: 1px solid black;
+}
+
+#container1 {
+    margin-top: 3%;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    /* max-width: 180px; */
+    height: 100%;
+    display: grid;
+    /* grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 2fr 1fr; */
+    /* justify-items: center; */
+    place-items: center;
+}
+
+#container1Hijo {
+    display: grid;
+    place-items: center;
+    width: 40%;
+}
+
+#container1Hijo div {
+    width: 100%;
+}
+
+#cartaSaliente {
+    width: 100%;
+    /* La imagen se ajustará al ancho máximo del contenedor */
+    height: auto;
+    /* Se ajustará automáticamente a la proporción original */
+}
+
+/*
+#cartasFrente {
+    grid-column: 1;
+    width: 50%;
+    height: 80%;
+    background-color: azure;
+    text-align: center;
+}
+
+#cartasReves {
+    grid-column: 2;
+    width: 60%;
+    height: 50%;
+    background-color: azure;
+}
+
+*/
+
+#container2 {
+    grid-column: 2;
+    grid-row: 2;
+    /* margin-top: -50%; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    /* justify-items: center; */
+    /* grid-template-rows: 1fr; */
+    place-items: center;
+    /* margin-bottom: 2%;
+    margin-top: 2%; */
+}
+
+#reloj {
+    grid-column: 2;
+    grid-row: 2;
+    width: 50%;
+    height: 80%;
+    background-color: azure;
+}
+
+#container3 {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 1fr 0.11fr;
+}
+
+#container3 div:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #container3 span:nth-child(1) {
+    margin-top: 2%;
+} */
+
+
+#tablero2 {
+    /* grid-column: 2;
+    grid-row: 3; */
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20% repeat(5, 16%);
+    /* grid-template-rows: 1.5fr repeat(5, 1fr); */
+}
+
+span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#opciones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#abandonar {
+    text-decoration: none;
+    background-color: #f13e3e;
+    font-weight: bold;
+    padding: 1%;
+    color: white;
+    margin: 2%;
+    border-radius: 5px;
+    /* box-shadow: 1px 1px 10px 10px rgb(216, 85, 85); */
+}
+
+#opciones>span {
+    background-color: #86f13e;
+    font-weight: bold;
+    padding: 1%;
+    color: white;
+    margin: 2%;
+    border-radius: 5px;
+    font-size: 12px;
+    
+    /* box-shadow: 1px 1px 10px 10px rgb(216, 85, 85); */
+}
+
+/*yunior lagos*/
+/* estilos.css linea */
+body {
+    transition: background-color 1s ease-in-out;
+}
+
+.segundo {
+    width: 100%;
+    height: 5px;
+    background-color: #3498db;
+    /* Color de fondo del cronómetro */
+    /* animation: llenar 5s linear infinite;  */
+    /* Duración de la animación: 5 segundos */
+}
+
+/* estilos.css */
+body {
+    position: relative;
+}
+
+.reloj {
+    position: absolute;
+    width: 5%;
+    height: 3%;
+    background-color: #3498db;
+    /* Color del cuadro del reloj */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    color: #fff;
+    /* Color del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    /* Tamaño del texto */
+    text-transform: lowercase;
+    /* animation: llenar 5s linear infinite;  */
+    /* Duración de la animación: 5 segundos */
+}
+
+@keyframes llenar {
+    to {
+        width: 0;
+    }
+}
+
+/*Oscar Herrera*/
+.seleccionada {
+    border: 2px solid green;
+}
+
+.seleccionada1 {
+    border: 2px solid blue;
+}
+
+#tablero3 {
+    grid-column: 1;
+    grid-row: 1/ span 3;
+    display: grid;
+    width: 70%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 18% repeat(5, 16%);
+    /* grid-template-rows: 1.5fr repeat(5, 1fr); */
+    place-items: center;
+}

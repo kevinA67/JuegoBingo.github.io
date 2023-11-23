@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>BINGO GRUPO-1</title>
+    <link rel="stylesheet" href="estilo2.css" />
+    <link rel="stylesheet" href="estiloMensajes.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Fasthand&display=swap" rel="stylesheet">
+</head>
+
+<body id="interfazJuego">
+    <header id="header">
+        <div class="menu-1">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="registro.html">Registrar Jugador</a>
+                </li>
+                <li>
+                    <a href="estadisticaJugadores.html">Estadísticas</a>
+                </li>
+                
+                <li>
+                    <a href="login.html">Iniciar Juego</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div id="container">
+
+        <div id="containerClone">
+            <div id="dificultad">
+                <span>FAVOR ELEGIR LA DIFICULTAD DEL JUEGO</span>
+                <a href="#">FÁCIL</a>
+                <a href="#">DIFÍCIL</a>
+                <a href="login.html" id="cerrar">CERRAR SESIÓN</a>
+            </div>
+            <div id="bontonIniciar">INICIAR</div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+
+        <div id="tablero">
+            <img class="titulo" src="imagenes/b.png" alt="">
+            <img class="titulo" src="imagenes/i.png" alt="">
+            <img class="titulo" src="imagenes/n.png" alt="">
+            <img class="titulo" src="imagenes/g.png" alt="">
+            <img class="titulo" src="imagenes/o.png" alt="">
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+            <div class="casillaJugador">
+                <img class="jugador" src="" alt="">
+                <span class="x">X</span>
+            </div>
+
+        </div>
+
+        <div id="container1">
+            <span>
+                <center>cartas</center>
+            </span>
+            <div id="container1Hijo">
+                <img id="cartaSaliente" src="imagenes/interrogante.png" alt="Imagen de Animal">
+                <div>
+                    <div class="segundo"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="container2">
+            <!-- se agrego -->
+            <div class="overlay" id="overlay"></div>
+            <div class="warning" id="warning"></div>
+
+            <span>
+                <center>tiempo</center>
+                <div class="reloj" id=""></div>
+            </span>
+
+        </div>
+
+        <div id="container3">
+            <div><span>Contrincante</span>
+                <div id="tablero2">
+                    <img class="titulo" src="imagenes/b.png" alt="">
+                    <img class="titulo" src="imagenes/i.png" alt="">
+                    <img class="titulo" src="imagenes/n.png" alt="">
+                    <img class="titulo" src="imagenes/g.png" alt="">
+                    <img class="titulo" src="imagenes/o.png" alt="">
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+
+                    <div class="casillaJugador">
+                        <img class="jugador2" src="" alt="">
+                        <span class="x">X</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button class="btnconfetti">Lanzar Confeti</button> -->
+
+            <div id="opciones">
+                <span>Jugador: </span>
+                <span>Modo: </span>
+                <button id="abandonar">Abandonar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.1/dist/confetti.browser.min.js"></script>
+
+    <script src="script/mensajes.js"></script>
+    <script src="script/jugadores.js"></script>
+    <script src="script.js"></script>
+    <script src="script/boton.js"></script>
+</body>
+
+</html>
